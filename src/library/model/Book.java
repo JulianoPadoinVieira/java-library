@@ -1,10 +1,11 @@
 package library.model;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 public class Book {
 
-    private Long id;
+    private final String id = UUID.randomUUID().toString();
     private String title;
     private Author author;
     private boolean available;
@@ -18,16 +19,12 @@ public class Book {
 
     }
 
-    public boolean isAvailable(){
-        return available;
-    }
-
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public boolean isAvailable(){
+        return available;
     }
 
     public String getTitle() {

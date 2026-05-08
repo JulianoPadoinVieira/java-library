@@ -1,10 +1,11 @@
 package library.model;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 public class Lend {
 
-    private Long id;
+    private final String id = UUID.randomUUID().toString();
     private Book book;
     private String clientName;
     private LocalDate lendDate;
@@ -15,6 +16,10 @@ public class Lend {
         this.book = book;
         this.clientName = clientName;
         this.lendDate = LocalDate.now();
+    }
+
+    public String getId() {
+        return id;
     }
 
 }
