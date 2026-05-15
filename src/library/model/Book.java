@@ -8,11 +8,11 @@ public class Book {
     private final String id = UUID.randomUUID().toString();
     private String title;
     private Author author;
-    private boolean available;
+    private boolean available = true;
     private LocalDate registrationDate;
-    private LocalDate updateDate;
+    private int borrowedDays;
 
-    public Book(String title, Author author){
+    public Book(String title, Author author ){
 
         this.title = title;
         this.author = author;
@@ -24,7 +24,7 @@ public class Book {
     }
 
     public boolean isAvailable(){
-        return available;
+        return isAvailable;
     }
 
     public String getTitle() {
@@ -52,11 +52,11 @@ public class Book {
     }
 
     public LocalDate getUpdateDate() {
-        return updateDate;
+        return borrowedDays;
     }
 
     public void setUpdateDate(LocalDate updateDate) {
-        this.updateDate = updateDate;
+        this.borrowedDays = updateDate;
     }
 
 }
