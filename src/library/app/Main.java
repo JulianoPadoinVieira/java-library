@@ -40,6 +40,32 @@ public class Main {
                 "Sigmund Freud"
         );
 
+        bookService.addBook(
+                Book.createMockBook(
+                        "Gestão de pessoas",
+                        authorService.findByName("Idalberto Chiavenato")
+                )
+        );
+
+        bookService.addBook(
+                Book.createMockBook(
+                        "Como Steve Jobs Virou Steve Jobs",
+                        authorService.findByName("Steve Jobs")
+                )
+        );
+
+        bookService.addBook(
+                Book.createMockBook(
+                        "Pai rico, pai pobre",
+                        authorService.findByName("Robert T. Kiyosaki")
+                )
+        );
+
+        bookService.createBook(
+                "O último dos moicanos",
+                "Esse não deve ser registrado"
+        );
+
 //        bookService.addBook(new Book("A interpretação dos sonhos", authorService.findByName("Sigmund Freud")));
 //        bookService.addBook(new Author("Idalberto Chiavenato", LocalDate.parse("1936-12-22")));
 //        bookService.addBook(new Author("Steve Jobs", LocalDate.parse("1955-02-24")));

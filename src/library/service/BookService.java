@@ -29,15 +29,16 @@ public class BookService {
         public void printAllBooks() {
         for (Book b : books) {
 
-            Lend lend = new Lend();
-
-            String status = b.isAvailable() ? "Available" :
+            String status = b.isAvailable()
+                    ? "Available"
+                    : "Borrowed";
 
             System.out.println(
                     "ID: " + b.getId()
-                    + " - Title: " + b.getTitle()
-                    + " - Available: " + b.isAvailable()
-                    + " - Registration Date: " + b.getRegistrationDate());
+                            + " - Title: " + b.getTitle()
+                            + " - Status: " + status
+                            + " - Registration Date: " + b.getRegistrationDate()
+            );
         }
     }
 
@@ -45,8 +46,12 @@ public class BookService {
 
         Author author = authorService.findByName(authorName);
 
+
+
         if (author == null) {
-            System.out.println("Author not found.");
+            System.out.println("|--------- Error on register a Book ---------|");
+            System.out.println("|--- Author " +  authorName + " not found ---|");
+            System.out.println("|--------------- End of Error ---------------|");
             return;
         }
 
