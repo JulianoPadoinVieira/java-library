@@ -25,4 +25,15 @@ public class AuthorService {
         }
     }
 
+    public Author findByName(String name) {
+
+        for (Author af : authors) {
+            if (af.getName().equalsIgnoreCase(name)) {
+                return af;
+            }
+        }
+
+        return null;
+    }
+
 }

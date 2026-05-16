@@ -33,6 +33,23 @@ public class Main {
         System.out.println("----------- End of Authors -----------");
         System.out.println(" ");
 
+        BookService bookService = new BookService(authorService);
+
+        bookService.createBook(
+                "A interpretação dos sonhos",
+                "Sigmund Freud"
+        );
+
+//        bookService.addBook(new Book("A interpretação dos sonhos", authorService.findByName("Sigmund Freud")));
+//        bookService.addBook(new Author("Idalberto Chiavenato", LocalDate.parse("1936-12-22")));
+//        bookService.addBook(new Author("Steve Jobs", LocalDate.parse("1955-02-24")));
+//        bookService.addBook(new Author("Robert T. Kiyosaki", LocalDate.parse("1947-04-08")));
+
+        System.out.println("-------------- Books --------------");
+        bookService.printAllBooks();
+        System.out.println("----------- End of Books -----------");
+        System.out.println(" ");
+
 
 
     }
